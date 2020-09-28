@@ -120,6 +120,7 @@ class ResizingIntSet
   def resize!
 
       prev = @store
+      prev_length = prev.length
       @count = 0
       @store = Array.new(prev_length*2) { Array.new }
       prev.flatten.each {|num| insert(num)}
